@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer un contrat
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Editer le Contrat</h1>
+		{{ include('contrat/_form.html.twig', {'button_label': 'Modifier le contrat et affiliés rattachés '}) }}
+		<p>
+			<a href="{{ path('contrat_index') }}" class="btn btn-outline-secondary">Retour a la liste</a>
+		</p>
+	</div>
+{% endblock %}
+

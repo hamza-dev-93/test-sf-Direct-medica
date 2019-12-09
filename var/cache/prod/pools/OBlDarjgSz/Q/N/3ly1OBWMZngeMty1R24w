@@ -1,0 +1,22 @@
+<?php //App.Entity.Affilie
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        (Registry::$factories['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Affilie',
+            ],
+            'defaultGroup' => [
+                'Affilie',
+            ],
+        ],
+    ],
+    $o[0],
+    []
+);

@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+<div class="form-group">
+	{{ form_row(form.libelle, {'attr': {'placeholder': "Libelle de contrat"}, 'label': "Libelle de contrat:", 'size': 100} ) }}
+	<ul class="tags" data-prototype="{{ form_widget(form.affilies.vars.prototype)|e('html_attr') }}">
+		<div class="col-md-6">
+			{{ form_row(form.affilies, {'label': "Libelle de l'affilie: "} ) }}
+		</div>
+	</ul>
+</div>
+{{ form_rest(form) }}
+<button class="btn btn-primary">{{ button_label|default('Enregistrer un nouveau contrat') }}</button>
+<br>
+{{ form_end(form) }}
+

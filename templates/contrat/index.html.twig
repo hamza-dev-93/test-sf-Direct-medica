@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contrat index
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Liste des contrats</h1>
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success alert-dismissible fade show">
+				{{ message }}
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		{% endfor %}
+		<table class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Libelle</th>
+					<th scope="col">actions</th>
+					<th scope="col">Supprimer</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for contrat in contrats %}
+					<tr>
+						<td>{{ contrat.libelle }}</td>
+						<td>
+							<a href="{{ path('contrat_edit', {'id': contrat.id}) }}" class="btn btn-primary">editer</a>
+						</td>
+						<td>
+							{{ include('contrat/_delete_form.html.twig') }}
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="3">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<a href="{{ path('contrat_new') }}" class="btn btn-primary">Create Nouveau contrat</a>
+	</div>
+	<br>
+{% endblock %}
+
